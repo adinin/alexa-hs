@@ -46,6 +46,7 @@ var https = require('https');
  * The AlexaSkill Module that has the AlexaSkill prototype and helper functions
  */
 var AlexaSkill = require('./AlexaSkill');
+var FirstEventIntent = require('./intents/firstEventIntent');
 
 /**
  * URL prefix to download history content from Wikipedia
@@ -98,7 +99,7 @@ HistoryBuffSkill.prototype.eventHandlers.onSessionEnded = function (sessionEnded
 HistoryBuffSkill.prototype.intentHandlers = {
 
     "GetFirstEventIntent": function (intent, session, response) {
-        handleFirstEventRequest(intent, session, response);
+        FirstEventIntent(AlexaSkill, intent, session, response);
     },
 
     "HowLongEventIntent": function (intent, session, response) {
@@ -208,27 +209,6 @@ function getWelcomeResponse(response) {
     response.askWithCard(speechOutput, repromptOutput, cardTitle, cardOutput);
 }
 
-/**
- * Gets a poster prepares the speech to reply to the user.
- */
-function handleFirstEventRequest(intent, session, response) {
-    // The category didn't match one of our predefined categories. Reprompt the user.
-    speechText = "I'm so sorry to hear that. Would you like to add it to your story line?";
-    repromptText = "<speak>I'm not sure what the category is, you can say, " +
-        "books <break time=\"0.2s\" /> " +
-        "fashion <break time=\"0.2s\" /> " +
-        "movie <break time=\"0.2s\" /> " +
-        "kitchen.</speak>";
-    speechOutput = {
-        speech: speechText,
-        type: AlexaSkill.speechOutputType.PLAIN_TEXT
-    };
-    repromptOutput = {
-        speech: repromptText,
-        type: AlexaSkill.speechOutputType.SSML
-    };
-    response.ask(speechOutput, repromptOutput);
-}
 
 /**
  * Gets a poster prepares the speech to reply to the user.
