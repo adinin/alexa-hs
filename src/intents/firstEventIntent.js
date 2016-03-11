@@ -1,7 +1,12 @@
 
 // var AlexaSkill = require('./AlexaSkill');
 var FirstEventIntent = function(AlexaSkill, intent, session, response){
-    speechText = "I'm so sorry to hear that. Would you like to add it to your story line?";
+    var eventSlot = intent.slots.Event,
+            eventName;
+    if (eventSlot && eventSlot.value){
+        eventName = eventSlot.value.toLowerCase();
+    }
+    speechText = "I'm so sorry to hear about "+eventName+". Would you like to add it to your story line?";
     repromptText = "<speak>I'm not sure what the category is, you can say, " +
         "books <break time=\"0.2s\" /> " +
         "fashion <break time=\"0.2s\" /> " +

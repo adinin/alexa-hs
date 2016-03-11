@@ -1,7 +1,13 @@
 {
   "intents": [
     {
-      "intent": "GetFirstEventIntent"
+      "intent": "GetFirstEventIntent",
+      "slots": [
+        {
+          "name": "Event",
+          "type": "LIST_OF_EVENTS"
+        }
+      ]
     },
     {
       "intent": "HowLongEventIntent"

@@ -1,4 +1,4 @@
-GetFirstEventIntent I had a seizure 
+GetFirstEventIntent I had a {Event}
 
 HowLongEventIntent yes
 HowLongEventIntent yup
