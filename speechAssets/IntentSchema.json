@@ -1,0 +1,28 @@
+{
+  "intents": [
+    {
+      "intent": "GetFirstEventIntent"
+    },
+    {
+      "intent": "HowLongEventIntent"
+    },
+    {
+      "intent": "DescribeEventIntent"
+    },
+    {
+      "intent": "TriggerEventIntent"
+    },
+    {
+      "intent": "LastEventIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

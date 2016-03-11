@@ -1,0 +1,26 @@
+GetFirstEventIntent I had a seizure 
+
+HowLongEventIntent yes
+HowLongEventIntent yup
+HowLongEventIntent sure
+HowLongEventIntent yes please
+
+DescribeEventIntent about sixty seconds
+DescribeEventIntent sixty seconds
+
+TriggerEventIntent i had limbs jerking
+TriggerEventIntent i had limbs shaking
+TriggerEventIntent limbs jerking
+TriggerEventIntent limbs shaking
+TriggerEventIntent i had limbs jerking and I blanked out
+TriggerEventIntent i had limbs shaking and I blanked out
+TriggerEventIntent I blanked out
+
+LastEventIntent yes it was flashing bright lights
+LastEventIntent it was flashing bright lights
+LastEventIntent it was flashing lights
+
+AMAZON.StopIntent no
+AMAZON.StopIntent nope
+AMAZON.StopIntent no thanks
+AMAZON.StopIntent no thank you
