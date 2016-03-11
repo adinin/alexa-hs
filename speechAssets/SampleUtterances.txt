@@ -1,9 +1,9 @@
 GetFirstEventIntent I had a {Event}
 
-HowLongEventIntent yes
-HowLongEventIntent yup
-HowLongEventIntent sure
-HowLongEventIntent yes please
+YesIntent yes
+YesIntent yup
+YesIntent sure
+YesIntent yes please
 
 DescribeEventIntent about sixty seconds
 DescribeEventIntent sixty seconds

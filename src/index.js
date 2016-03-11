@@ -47,6 +47,7 @@ var https = require('https');
  */
 var AlexaSkill = require('./AlexaSkill');
 var FirstEventIntent = require('./intents/firstEventIntent');
+var HowLongEvent = require('./intents/howlongEvent');
 
 /**
  * URL prefix to download history content from Wikipedia
@@ -102,18 +103,20 @@ HistoryBuffSkill.prototype.intentHandlers = {
         FirstEventIntent(AlexaSkill, intent, session, response);
     },
 
-    "HowLongEventIntent": function (intent, session, response) {
-        var speechText = "How long did the seizure last?";
-        var repromptText = "How long was the seizure happenning for?";
-        var speechOutput = {
-            speech: speechText,
-            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+    "YesIntent": function (intent, session, response) {
+        var lastIntent = "FirstEventIntent";
+
+        if (Object.keys(session.attributes).length > 0 && session.attributes['intent'].length > 0) {
+            var intentArray = session.attributes['intent'];
+            lastIntent = intentArray[intentArray.length-1];
+            console.log("Last Intent is" + lastIntent);
         };
-        var repromptOutput = {
-            speech: repromptText,
-            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+
+        if (lastIntent === "FirstEventIntent") {
+            HowLongEvent(AlexaSkill, intent, session, response);
+        } else {
+            console.log("NO IDEA");
         };
-        response.ask(speechOutput, repromptOutput);
     },
 
     "DescribeEventIntent": function(intent, session, response){

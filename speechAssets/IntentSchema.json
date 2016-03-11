@@ -10,7 +10,7 @@
       ]
     },
     {
-      "intent": "HowLongEventIntent"
+      "intent": "YesIntent"
     },
     {
       "intent": "DescribeEventIntent"
